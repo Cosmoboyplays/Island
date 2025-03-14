@@ -8,6 +8,7 @@ public class Bear extends Predator {
     private final int cellMovesPerCycle = 2;
     private final double saturationAmount = 80;
 
+
     @Override
     public double getWeight() {
         return weight;
@@ -32,4 +33,5 @@ public class Bear extends Predator {
     public double getSaturationAmount() {
         return saturationAmount;
     }
+
 }

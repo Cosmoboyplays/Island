@@ -1,11 +1,11 @@
-package com.dudarev.island.classes.herbivores;
+package classes.herbivores;
 
-import com.dudarev.island.classes.base.Herbivore;
+import classes.base.Herbivore;
 
 public class Rabbit extends Herbivore {
     private final String image = "\uD83D\uDC07";
     private final double weight = 2;
-    private final int maxItemsPerCell = 150;
+    public static final int maxItemsPerCell = 150;
     private final int cellMovesPerCycle = 2;
     private final double saturationAmount = 0.45;
 

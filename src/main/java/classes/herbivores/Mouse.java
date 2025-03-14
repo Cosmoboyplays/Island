@@ -1,11 +1,11 @@
-package com.dudarev.island.classes.herbivores;
+package classes.herbivores;
 
-import com.dudarev.island.classes.base.Herbivore;
+import classes.base.Herbivore;
 
 public class Mouse extends Herbivore {
     private final String image = "\uD83D\uDC01";
     private final double weight = 0.05;
-    private final int maxItemsPerCell = 500;
+    public static final int maxItemsPerCell = 500;
     private final int cellMovesPerCycle = 1;
     private final double saturationAmount = 0.01;
 
