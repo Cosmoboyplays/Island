@@ -1,6 +1,8 @@
 package classes.herbivores;
 import classes.base.Herbivore;
 
+import java.util.ArrayList;
+
 public class Boar extends Herbivore {
     private final String image = "\uD83D\uDC17";
     private final double weight = 400;
@@ -8,6 +10,12 @@ public class Boar extends Herbivore {
     private final int cellMovesPerCycle = 2;
     private final double saturationAmount = 50;
 
+    public Boar() {
+        super();
+    }
+    public Boar(ArrayList<Integer> coords) {
+        super(coords);
+    }
     @Override
     public double getWeight() {
         return weight;

@@ -1,6 +1,8 @@
 package classes.predators;
 import classes.base.Predator;
 
+import java.util.ArrayList;
+
 public class Bear extends Predator {
     private final String image = "\uD83D\uDC3B";
     private final double weight = 500;
@@ -8,6 +10,13 @@ public class Bear extends Predator {
     private final int cellMovesPerCycle = 2;
     private final double saturationAmount = 80;
 
+    public Bear() {
+        super();
+    }
+
+    public Bear(ArrayList<Integer> coords) {
+        super(coords);
+    }
 
     @Override
     public double getWeight() {

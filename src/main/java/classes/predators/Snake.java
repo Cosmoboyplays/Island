@@ -1,6 +1,9 @@
 package classes.predators;
 
 import classes.base.Predator;
+
+import java.util.ArrayList;
+
 public class Snake extends Predator {
     private final String image = "\uD83D\uDC0D";
     private final double weight = 15;
@@ -8,6 +11,13 @@ public class Snake extends Predator {
     private final int cellMovesPerCycle = 1;
     private final double saturationAmount = 3;
 
+    public Snake() {
+        super();
+    }
+
+    public Snake(ArrayList<Integer> coords) {
+        super(coords);
+    }
     @Override
     public double getWeight() {
         return weight;

@@ -2,6 +2,8 @@ package classes.herbivores;
 
 import classes.base.Herbivore;
 
+import java.util.ArrayList;
+
 public class Caterpillar extends Herbivore {
     private final String image = "\uD83D\uDC1B";
     private final double weight = 0.01;
@@ -9,6 +11,12 @@ public class Caterpillar extends Herbivore {
     private final int cellMovesPerCycle = 0;
     private final double saturationAmount = 0;
 
+    public Caterpillar() {
+        super();
+    }
+    public Caterpillar(ArrayList<Integer> coords) {
+        super(coords);
+    }
     @Override
     public double getWeight() {
         return weight;

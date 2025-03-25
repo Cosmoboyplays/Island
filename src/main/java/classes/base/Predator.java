@@ -8,18 +8,31 @@ import java.util.Objects;
 import static classes.utils.LiveSimulator.island;
 
 public abstract class Predator extends Animal {
-    private static ArrayList<Predator> instances = new ArrayList<>();
+    private static ArrayList<Animal> instances = new ArrayList<>();
 
     public Predator() {
         instances.add(this);
     }
-    public static ArrayList<Predator> getInstances() {
+
+    public static ArrayList<Animal> getStaticInstances() {
         return instances;
     }
+
+    public ArrayList<Animal> getInstances() {
+        return instances;
+    }
+
     @Override
     public void setSatietyAmount(int satietyAmount) {
         if (satietyAmount > 100) this.satietyAmount = 100;
         else this.satietyAmount = satietyAmount;
+    }
+
+    public Predator(ArrayList<Integer> coords) {
+        instances.add(this);
+        super.setCoords(coords);
+//        System.out.println("Новый хищник создан " + this.getCoords()+ "размер списка хищников "+ this.getInstances().size());
+
     }
     //    private int howMuchTickCouldLiveWithoutSaturation = 50;
 //

@@ -53,10 +53,7 @@ public class ChanceToBeEatenConfig {
         put(Horse.class.getName(), new HashMap<>() {{
             put(Grass.class.getName(), 100);
         }});
-        put(Horse.class.getName(), new HashMap<>() {{
-            put(Grass.class.getName(), 100);
-        }});
-        put(Rabbit.class.getName(), new HashMap<>() {{
+        put(Deer.class.getName(), new HashMap<>() {{
             put(Grass.class.getName(), 100);
         }});
         put(Rabbit.class.getName(), new HashMap<>() {{

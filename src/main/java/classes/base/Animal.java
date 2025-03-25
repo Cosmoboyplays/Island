@@ -6,10 +6,13 @@ import java.util.stream.Collectors;
 public abstract class Animal {
     protected int satietyAmount = 100;
     private ArrayList<Integer> coords;
+    private Boolean multiplied = true;
 
     public void eat(){}
     public void move(){}
-    public void produce(){}
+    public void produce(){
+        System.out.println("размножаемся");
+    }
 
     public ArrayList<Integer> getCoords() {
         return coords;
@@ -36,5 +39,17 @@ public abstract class Animal {
         if (satietyAmount > 100) this.satietyAmount = 100;
         else this.satietyAmount = satietyAmount;
         }
+
+    public Boolean getMultiplied() {
+        return multiplied;
     }
+
+    public void setMultiplied(Boolean multiplied) {
+        this.multiplied = multiplied;
+    }
+
+    public  ArrayList<Animal> getInstances() {
+        return null;
+    }
+}
 

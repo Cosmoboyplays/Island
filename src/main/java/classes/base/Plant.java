@@ -4,12 +4,15 @@ package classes.base;
 import java.util.ArrayList;
 
 public abstract class Plant extends Animal{
-    private static ArrayList<Plant> instances = new ArrayList<>();
+    private static ArrayList< Animal> instances = new ArrayList<>();
 
     public Plant() {
         instances.add(this);
     }
-    public static ArrayList<Plant> getInstances() {
+    public ArrayList<Animal> getInstances() {
+        return instances;
+    }
+    public static ArrayList<Animal> getStaticInstances() {
         return instances;
     }
 

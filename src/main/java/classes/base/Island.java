@@ -22,7 +22,7 @@ public class Island {
 
     // конструктор
     public Island(int width, int height, int lossOfLife, int howManyPredators, int howManyHerbivores, int howManyPlants) {
-        this.width = width-1; // 100
+        this.width = width-1; // 100 не
         this.height = height-1; // 20
         this.lossOfLife = lossOfLife; // 25%
         this.howManyPredators = howManyPredators;

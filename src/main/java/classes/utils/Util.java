@@ -11,6 +11,7 @@ import static classes.utils.LiveSimulator.island;
 
 public class Util {
     //метод для создания нужного количества животных переданного класса
+
     public static <T> ArrayList<T> createAnimals(int amount, Class<T> clazz) {
         ArrayList<T> animals = new ArrayList<>();
         try {
@@ -34,6 +35,7 @@ public class Util {
         }
         return count;
     }
+
     // метод - распределение животных по сетке
     public static void gridDistribution(ArrayList<Animal> animals) {
         Random randomwidth = new Random();
