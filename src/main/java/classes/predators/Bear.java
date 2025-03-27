@@ -42,5 +42,4 @@ public class Bear extends Predator {
     public double getSaturationAmount() {
         return saturationAmount;
     }
-
 }

@@ -1,19 +1,22 @@
 package classes.base;
 
+import java.util.concurrent.CopyOnWriteArrayList;
 
-import java.util.ArrayList;
-
-public abstract class Plant extends Animal{
-    private static ArrayList< Animal> instances = new ArrayList<>();
+public abstract class Plant extends Animal {
+    private static CopyOnWriteArrayList<Animal> instances = new CopyOnWriteArrayList<>();
 
     public Plant() {
         instances.add(this);
     }
-    public ArrayList<Animal> getInstances() {
+
+    public CopyOnWriteArrayList<Animal> getInstances() {
         return instances;
+
     }
-    public static ArrayList<Animal> getStaticInstances() {
+
+    public static CopyOnWriteArrayList<Animal> getStaticInstances() {
         return instances;
+
     }
 
     public abstract double getWeight();

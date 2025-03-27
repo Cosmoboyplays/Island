@@ -18,16 +18,23 @@ public class Island {
     private int howManyPredators;
     private int howManyHerbivores;
     private int howManyPlants;
+
+    public int getGrowthPlan() {
+        return growthPlan;
+    }
+
+    private int growthPlan;
     public ArrayList<ArrayList<Cell>> grid = new ArrayList<>();
 
     // конструктор
-    public Island(int width, int height, int lossOfLife, int howManyPredators, int howManyHerbivores, int howManyPlants) {
+    public Island(int width, int height, int lossOfLife, int howManyPredators, int howManyHerbivores, int howManyPlants,int growthPlan) {
         this.width = width-1; // 100 не
         this.height = height-1; // 20
         this.lossOfLife = lossOfLife; // 25%
         this.howManyPredators = howManyPredators;
         this.howManyHerbivores = howManyHerbivores;
         this.howManyPlants = howManyPlants;
+        this.growthPlan = growthPlan;
     }
     public int getLossOfLife() {
         return lossOfLife;

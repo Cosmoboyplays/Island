@@ -1,24 +1,22 @@
 package classes.base;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
-
-import static classes.utils.LiveSimulator.island;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class Predator extends Animal {
-    private static ArrayList<Animal> instances = new ArrayList<>();
+    private static CopyOnWriteArrayList<Animal> instances = new CopyOnWriteArrayList<Animal>();
 
     public Predator() {
         instances.add(this);
     }
 
-    public static ArrayList<Animal> getStaticInstances() {
+    public static CopyOnWriteArrayList<Animal> getStaticInstances() {
         return instances;
     }
 
-    public ArrayList<Animal> getInstances() {
+    public CopyOnWriteArrayList<Animal> getInstances() {
         return instances;
     }
 
@@ -34,16 +32,6 @@ public abstract class Predator extends Animal {
 //        System.out.println("Новый хищник создан " + this.getCoords()+ "размер списка хищников "+ this.getInstances().size());
 
     }
-    //    private int howMuchTickCouldLiveWithoutSaturation = 50;
-//
-//    public int getHowMuchTickCouldLiveWithoutSaturation() {
-//        return howMuchTickCouldLiveWithoutSaturation;
-//    }
-//
-//    public void decrementHowMuchTickCouldLiveWithoutSaturation() {
-//        howMuchTickCouldLiveWithoutSaturation--;
-//    }
-//
 
     /**
      * Indicates whether some other object is "equal to" this one.

@@ -1,20 +1,20 @@
 package classes.base;
+
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class Herbivore extends Animal {
-    public static ArrayList<Animal> instances = new ArrayList<>();
+    public static CopyOnWriteArrayList<Animal> instances = new CopyOnWriteArrayList<Animal>();
 
     public Herbivore() {
         instances.add(this);
     }
 
-    public static ArrayList<Animal> getStaticInstances() {
+    public static CopyOnWriteArrayList<Animal> getStaticInstances() {
         return instances;
     }
 
-    public ArrayList<Animal> getInstances() {
+    public CopyOnWriteArrayList<Animal> getInstances() {
         return instances;
     }
 
@@ -30,15 +30,6 @@ public abstract class Herbivore extends Animal {
         else this.satietyAmount = satietyAmount;
     }
 
-        //    private int howMuchTickCouldLiveWithoutSaturation = 30;
-//
-//    public int getHowMuchTickCouldLiveWithoutSaturation() {
-//        return howMuchTickCouldLiveWithoutSaturation;
-//    }
-//
-//    public void decrementHowMuchTickCouldLiveWithoutSaturation() {
-//        howMuchTickCouldLiveWithoutSaturation--;
-//    }
     public int hashCode() {
         return super.hashCode();
     }

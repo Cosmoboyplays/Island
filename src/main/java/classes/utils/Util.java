@@ -5,13 +5,14 @@ import classes.base.Animal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import static classes.utils.LiveSimulator.island;
 
 
 public class Util {
-    //метод для создания нужного количества животных переданного класса
 
+    //метод для создания нужного количества животных переданного класса
     public static <T> ArrayList<T> createAnimals(int amount, Class<T> clazz) {
         ArrayList<T> animals = new ArrayList<>();
         try {
@@ -20,7 +21,7 @@ public class Util {
                 animals.add(clazz.getDeclaredConstructor().newInstance());
             }
         } catch (Exception e) {
-            e.printStackTrace(); // Обработка исключений
+            e.printStackTrace();
         }
         // распределяем
         gridDistribution((ArrayList<Animal>) animals);
@@ -28,7 +29,7 @@ public class Util {
     }
 
     // метод для проверки сколько в клетке экземпляров переданного класса
-    public static int checkAmount(ArrayList spisok, Class<?> clazz ) {
+    public static int checkAmount(CopyOnWriteArrayList spisok, Class<?> clazz) {
         int count = 0;
         for (Object obj : spisok) {
             if (clazz.isInstance(obj)) count++;
@@ -43,13 +44,14 @@ public class Util {
         for (Animal i : animals) {
             int x = randomwidth.nextInt(island.width + 1);
             int y = randomheight.nextInt(island.height + 1);
-            ArrayList spisok = island.grid.get(x).get(y).spisok;
+            CopyOnWriteArrayList<Animal> spisok = island.grid.get(x).get(y).spisok;
             Class<?> classToCount = i.getClass();
             int amount_i_in_cell = Util.checkAmount(spisok, classToCount);//сколько животных этого вида на данной клетке
 
             if (i.getMaxItemsPerCell() > amount_i_in_cell) {
                 i.setCoords(new ArrayList<>(Arrays.asList(x, y))); // у каждого животного есть координаты где оно сейчас
                 spisok.add(i);
+
             }
         }
     }

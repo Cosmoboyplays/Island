@@ -1,16 +1,20 @@
 package classes.base;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class Animal {
     protected int satietyAmount = 100;
     private ArrayList<Integer> coords;
     private Boolean multiplied = true;
 
-    public void eat(){}
-    public void move(){}
-    public void produce(){
+    public void eat() {
+    }
+
+    public void move() {
+    }
+
+    public void produce() {
         System.out.println("размножаемся");
     }
 
@@ -21,6 +25,7 @@ public abstract class Animal {
     public void setCoords(ArrayList<Integer> coords) {
         this.coords = coords;
     }
+
     public abstract double getWeight();
 
     public abstract int getMaxItemsPerCell();
@@ -38,7 +43,7 @@ public abstract class Animal {
     public void setSatietyAmount(int satietyAmount) {
         if (satietyAmount > 100) this.satietyAmount = 100;
         else this.satietyAmount = satietyAmount;
-        }
+    }
 
     public Boolean getMultiplied() {
         return multiplied;
@@ -48,8 +53,6 @@ public abstract class Animal {
         this.multiplied = multiplied;
     }
 
-    public  ArrayList<Animal> getInstances() {
-        return null;
-    }
+    public abstract CopyOnWriteArrayList<Animal> getInstances();
 }
 

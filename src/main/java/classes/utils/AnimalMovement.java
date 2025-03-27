@@ -3,6 +3,7 @@ package classes.utils;
 import classes.base.Animal;
 
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static classes.utils.LiveSimulator.island;
@@ -24,7 +25,7 @@ public class AnimalMovement {
 
                     // Проверяем, что новые координаты находятся в пределах острова и на этой клетке не максимум этого вида животных
                     if (newX >= 0 && newX <= islandWidth && newY >= 0 && newY <= islandHeight) {
-                        ArrayList<Animal> thisCell = island.grid.get(newX).get(newY).spisok; // реальный список клетки
+                        CopyOnWriteArrayList<Animal> thisCell = island.grid.get(newX).get(newY).spisok; // реальный список клетки
                         int amount_i_in_cell = Util.checkAmount(thisCell, iClass);
                         // Проверяем что количество этого вида меньше максимально возможного количества этого вида на клетке
                         if (amount_i_in_cell< maxItemsPerCell){
